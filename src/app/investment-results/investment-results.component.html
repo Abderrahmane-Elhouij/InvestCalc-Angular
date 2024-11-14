@@ -1,16 +1,44 @@
 <div class="flex justify-center p-6 mx-auto">
-  <table class="w-full max-w-2xl">
-    <thead>
-      <tr>
-        <th class="text-green-500">Year</th>
-        <th class="text-green-500">Investment Value</th>
-        <th class="text-green-500">Interest (Year)</th>
-        <th class="text-green-500">Total Interest</th>
-        <th class="text-green-500">Invested Capital</th>
-      </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-  </table>
+  <div class="w-full max-w-2xl">
+    <div class="shadow-md rounded-lg p-6">
+      <div class="text-center mb-4">
+        @if (!results()) {
+        <p class="text-white">Please enter values and press calculate</p>
+        }@else {
+        <div class="flex justify-center">
+          <table class="w-full table-auto">
+            <thead>
+              <tr>
+                <th class="text-green-500 px-4 py-2">Year</th>
+                <th class="text-green-500 px-4 py-2">Investment Value</th>
+                <th class="text-green-500 px-4 py-2">Interest (Year)</th>
+                <th class="text-green-500 px-4 py-2">Total Interest</th>
+                <th class="text-green-500 px-4 py-2">Invested Capital</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (result of results(); track result.year) {
+              <tr class="border-b">
+                <td class="px-4 py-2 text-white">{{ result.year }}</td>
+                <td class="px-4 py-2 text-white text-right">
+                  {{ result.valueEndOfYear | currency }}
+                </td>
+                <td class="px-4 py-2 text-white text-right">
+                  {{ result.interest | currency }}
+                </td>
+                <td class="px-4 py-2 text-white text-right">
+                  {{ result.totalInterest | currency }}
+                </td>
+                <td class="px-4 py-2 text-white text-right">
+                  {{ result.totalAmountInvested | currency }}
+                </td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
 </div>
