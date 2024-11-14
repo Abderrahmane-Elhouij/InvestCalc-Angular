@@ -1,0 +1,23 @@
+<div class="bg-green-700 p-4 rounded-md max-w-screen-sm mx-auto">
+  <form class="grid grid-cols-2 gap-2" (ngSubmit)="onsubmit()">
+    <div>
+      <label for="initial-investment" class="block text-white text-sm">Initial Investment</label>
+      <input type="number" id="initial-investment" name="initialInvestment" [(ngModel)]="enteredInitialInvestment" class="mt-1 block w-full p-1 border border-gray-300 rounded-md bg-green-700" placeholder="0" />
+    </div>
+    <div>
+      <label for="expected-return" class="block text-white text-sm">Expected Return</label>
+      <input type="number" id="expected-return" name="expectedReturn" [(ngModel)]="enteredExpectedReturn" class="mt-1 block w-full p-1 border border-gray-300 rounded-md bg-green-700" placeholder="0" />
+    </div>
+    <div>
+      <label for="annual-investment" class="block text-white text-sm">Annual Investment</label>
+      <input type="number" id="annual-investment" name="annualInvestment" [(ngModel)]="enteredAnnualInvestment" class="mt-1 block w-full p-1 border border-gray-300 rounded-md bg-green-700" placeholder="0" />
+    </div>
+    <div>
+      <label for="duration" class="block text-white text-sm">Duration</label>
+      <input type="number" id="duration" name="duration" [(ngModel)]="enteredDuration" class="mt-1 block w-full p-1 border border-gray-300 rounded-md bg-green-700" placeholder="0" />
+    </div>
+    <div class="col-span-2">
+      <button type="submit" class="w-full bg-green-400 text-white p-1 rounded-md">Calculate</button>
+    </div>
+  </form>
+</div>
